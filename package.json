@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
+    "eslint-print-config": "eslint --print-config src/index.tsx > misc/eslint-print-config.json",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
