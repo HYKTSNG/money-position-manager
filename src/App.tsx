@@ -2,7 +2,7 @@ import React from "react";
 import logo from "src/logo.svg";
 import "src/App.css";
 
-function App() {
+export const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +21,4 @@ function App() {
       </header>
     </div>
   );
-}
-
-export default App;
+};
