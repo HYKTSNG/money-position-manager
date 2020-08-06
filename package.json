@@ -2,6 +2,10 @@
   "name": "money-position-manager",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  },
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1"
