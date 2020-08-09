@@ -3,7 +3,6 @@
   "files.encoding": "utf8",
 
   // パスが相対的に近い場合に相対パスが優先されてしまうため、絶対パスで統一する
-
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.tsdk": "node_modules/typescript/lib",
 
@@ -19,7 +18,6 @@
    * Extensions
    */
   /** dbaeumer.vscode-eslint */
-
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -29,7 +27,7 @@
     "typescript",
     "typescriptreact"
   ],
-  /** streetsidesoftware.code-spell-checker*/
+  /** streetsidesoftware.code-spell-checker */
   "cSpell.ignoreRegExpList": ["[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"],
   "cSpell.words": ["browserslist", "twallet"]
 }
