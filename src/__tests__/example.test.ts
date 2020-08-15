@@ -4,7 +4,7 @@
  * @see https://github.com/Microsoft/TypeScript/issues/15230
  */
 // eslint-disable-next-line jest/no-export
-export { }
+export {}
 
 /**
  * `npm test` が正しく動作することを確認するためのサンプル
@@ -34,7 +34,7 @@ describe("Example", () => {
  */
 describe("Comparison of `toStrictEqual`, `toBe` and `toEqual`", () => {
   class Human {
-    constructor(private readonly name: string, private readonly age: number) { }
+    constructor(private readonly name: string, private readonly age: number) {}
 
     public getGreet(): string {
       return `My name is ${this.name}. ${this.age} years old`

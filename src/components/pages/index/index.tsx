@@ -38,6 +38,7 @@ const headerCss = css`
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 48px;
 `
 
 const logoCss = css`
