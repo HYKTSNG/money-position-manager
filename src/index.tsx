@@ -1,3 +1,4 @@
+import { ButtonAppBar } from "src/components/organisms/burger_menus"
 import { GlobalStyles } from "src/components/styles/GlobalStyles"
 import { Index } from "src/components/pages/index"
 import React from "react"
@@ -6,6 +7,7 @@ import { unregister } from "./serviceWorker"
 
 ReactDOM.render(
   <React.StrictMode>
+    <ButtonAppBar />
     <GlobalStyles>
       <Index />
     </GlobalStyles>
