@@ -1,11 +1,9 @@
 {
   "files.eol": "\n",
   "files.encoding": "utf8",
-
   // パスが相対的に近い場合に相対パスが優先されてしまうため、絶対パスで統一する
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.tsdk": "node_modules/typescript/lib",
-
   // To prevent misdetection of indent size
   "[typescript]": {
     "editor.tabSize": 2
@@ -13,7 +11,6 @@
   "[typescriptreact]": {
     "editor.tabSize": 2
   },
-
   /**
    * Extensions
    */
@@ -28,10 +25,11 @@
     "typescriptreact"
   ],
   /** streetsidesoftware.code-spell-checker */
-  "cSpell.ignoreRegExpList": ["[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"],
+  "cSpell.ignoreRegExpList": [
+    "[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"
+  ],
   "cSpell.words": [
     "browserslist",
-    "twallet"
   ],
   "git.ignoreLimitWarning": true
 }
