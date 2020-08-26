@@ -1,7 +1,8 @@
-import { GlobalStyles } from "src/components/styles/GlobalStyles"
-import { Index } from "src/components/pages/index"
 import React from "react"
 import ReactDOM from "react-dom"
+import { Index } from "src/components/pages/index"
+import { GlobalStyles } from "src/components/styles/GlobalStyles"
+
 import { unregister } from "./serviceWorker"
 
 ReactDOM.render(
