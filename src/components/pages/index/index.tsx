@@ -3,10 +3,6 @@ import { css, jsx } from "@emotion/core"
 import { TextField } from "@material-ui/core"
 import React, { useState } from "react"
 
-type Props = {
-  children: never
-}
-
 export const Index: React.FC = () => {
   const [enterIncome, setEnterIncome] = useState(0)
   const [enterExpense, setEnterExpense] = useState(0)
@@ -25,7 +21,7 @@ export const Index: React.FC = () => {
   const onClickExpense = (e: { preventDefault: () => void }): void => {
     // 出費の計算
     e.preventDefault()
-    setEnterExpense(enterExpense - Number(expenseCount))
+    setEnterExpense(enterExpense + Number(expenseCount))
   }
 
   const sumMoney = enterIncome - enterExpense
@@ -38,7 +34,10 @@ export const Index: React.FC = () => {
       <form autoComplete="off" noValidate>
         {/* 収入 */}
         <p css={subTitle}>収入</p>
-        <div>{enterIncome}</div>
+        <div>
+          <span>収入額</span>
+          {enterIncome}
+        </div>
         <TextField
           id="standard-basic"
           label="income"
@@ -53,7 +52,10 @@ export const Index: React.FC = () => {
       <form autoComplete="off" noValidate>
         {/* 出費 */}
         <p css={subTitle}>出費</p>
-        <div>{expenseCount}</div>
+        <div>
+          <span>出費額</span>
+          {enterExpense}
+        </div>
         <TextField
           id="standard-basic"
           label="expense"
