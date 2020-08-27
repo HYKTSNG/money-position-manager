@@ -34,10 +34,8 @@ export const Index: React.FC = () => {
       <form autoComplete="off" noValidate>
         {/* 収入 */}
         <p css={subTitle}>収入</p>
-        <div>
-          <span>収入額</span>
-          {enterIncome}
-        </div>
+        <div>収入額</div>
+        <div>{enterIncome}</div>
         <TextField
           id="standard-basic"
           label="income"
@@ -52,8 +50,9 @@ export const Index: React.FC = () => {
       <form autoComplete="off" noValidate>
         {/* 出費 */}
         <p css={subTitle}>出費</p>
+        <div>出費額</div>
         <div>
-          <span>出費額</span>
+          <span>-</span>
           {enterExpense}
         </div>
         <TextField
