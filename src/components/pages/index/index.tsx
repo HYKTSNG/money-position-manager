@@ -28,6 +28,8 @@ export const Index: React.FC = () => {
 
   return (
     <div css={root}>
+      <p css={title}>money-position-manager</p>
+
       <p css={subTitle}>現在の貯金</p>
       <div>{sumMoney}</div>
 
@@ -75,9 +77,14 @@ const root = css`
   font-size: 32px;
   width: 25;
 `
-const subTitle = css`
+const title = css`
   margin: 32px;
   font-size: 64px;
+`
+
+const subTitle = css`
+  margin: 24px;
+  font-size: 48px;
   background-color: palegreen;
 `
 
