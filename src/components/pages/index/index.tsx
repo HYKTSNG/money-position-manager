@@ -95,10 +95,7 @@ export const Index: React.FC = () => {
             から<span>{enterNumExpense}</span>円出金されました
           </span>
         </div>
-        <div>
-          <span>-</span>
-          {enterNumExpense}
-        </div>
+
         <TextField
           id="standard-basic"
           label="Reason"
@@ -138,7 +135,8 @@ const subTitle = css`
   background-color: palegreen;
 `
 const text = css`
-  letter-spacing: 8px;
+  letter-spacing: 0.8px;
+  line-height: 48px;
 `
 
 const btn = css`
