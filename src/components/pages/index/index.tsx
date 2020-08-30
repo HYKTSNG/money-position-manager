@@ -7,8 +7,8 @@ export const Index: React.FC = () => {
   const [enterNumIncome, setEnterIncome] = useState(0)
   const [enterNumExpense, setEnterExpense] = useState(0)
 
-  const [incomeSum, setIncomeCount] = useState(0)
-  const [expenseSum, setExpenseCount] = useState(0)
+  const [incomeSum, setIncomeSum] = useState(0)
+  const [expenseSum, setExpenseSum] = useState(0)
 
   const [enterCharIncome, setEnterCharIncome] = useState("")
   const [enterCharExpense, setEnterCharExpense] = useState("")
@@ -77,7 +77,7 @@ export const Index: React.FC = () => {
         <TextField
           id="standard-basic"
           label="income"
-          onChange={(e) => setIncomeCount(Number(e.target.value))}
+          onChange={(e) => setIncomeSum(Number(e.target.value))}
           type="number"
         />
         <button css={btn} onClick={onClickNumIncome}>
@@ -107,7 +107,7 @@ export const Index: React.FC = () => {
         <TextField
           id="standard-basic"
           label="expense"
-          onChange={(e) => setExpenseCount(Number(e.target.value))}
+          onChange={(e) => setExpenseSum(Number(e.target.value))}
           type="number"
         />
         <button css={btn} onClick={onClickExpense}>
@@ -142,4 +142,5 @@ const text = css`
 const btn = css`
   color: #fff;
   background-color: chartreuse;
+  margin: 8px;
 `
