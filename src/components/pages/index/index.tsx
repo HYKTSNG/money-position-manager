@@ -41,7 +41,7 @@ export const Index: React.FC = () => {
   const onClickCharExpense = (
     eventChar: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
-    // 収入の理由
+    // 出費の理由
     eventChar.preventDefault()
     setEnterCharExpense(reasonExpense)
   }
@@ -62,7 +62,7 @@ export const Index: React.FC = () => {
         <div>
           {enterCharIncome}
           <span>
-            から<span>{enterNumIncome}</span>円入金されました
+            : <span>{enterNumIncome}</span>円入金されました
           </span>
         </div>
 
@@ -92,7 +92,7 @@ export const Index: React.FC = () => {
         <div>
           {enterCharExpense}
           <span>
-            から<span>{enterNumExpense}</span>円出金されました
+            : <span>{enterNumExpense}</span>円出金されました
           </span>
         </div>
 
