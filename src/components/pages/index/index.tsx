@@ -17,32 +17,18 @@ export const Index: React.FC = () => {
   const [reasonExpense, setReasonExpense] = useState("")
 
   const onClickNumIncome = (
-    eventNum: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
-    // 収入の計算
-    eventNum.preventDefault()
+    // 収入の計算＆理由
+    e.preventDefault()
     setEnterIncome(enterNumIncome + Number(incomeSum))
-  }
-
-  const onClickCharIncome = (
-    eventChar: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void => {
-    // 収入の理由
-    eventChar.preventDefault()
     setEnterCharIncome(reasonIncome)
   }
 
   const onClickExpense = (e: { preventDefault: () => void }): void => {
-    // 出費の計算
+    // 出費の計算＆理由
     e.preventDefault()
     setEnterExpense(enterNumExpense + Number(expenseSum))
-  }
-
-  const onClickCharExpense = (
-    eventChar: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void => {
-    // 出費の理由
-    eventChar.preventDefault()
     setEnterCharExpense(reasonExpense)
   }
 
@@ -71,9 +57,7 @@ export const Index: React.FC = () => {
           label="Reason"
           onChange={(e) => setReasonIncome(e.target.value)}
         />
-        <button css={btn} onClick={onClickCharIncome}>
-          ADD
-        </button>
+
         <TextField
           id="standard-basic"
           label="income"
@@ -101,9 +85,7 @@ export const Index: React.FC = () => {
           label="Reason"
           onChange={(e) => setReasonExpense(e.target.value)}
         />
-        <button css={btn} onClick={onClickCharExpense}>
-          ADD
-        </button>
+
         <TextField
           id="standard-basic"
           label="expense"
