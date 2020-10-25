@@ -1,9 +1,25 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
 import { TextField } from "@material-ui/core"
+import Button from "@material-ui/core/Button"
+import Icon from "@material-ui/core/Icon"
+import { makeStyles } from "@material-ui/core/styles"
+import CloudUploadIcon from "@material-ui/icons/CloudUpload"
+import DeleteIcon from "@material-ui/icons/Delete"
+import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice"
+import SaveIcon from "@material-ui/icons/Save"
 import React, { useState } from "react"
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}))
+
 export const Index: React.FC = () => {
+  const classes = useStyles()
+  // 分からん
+  // const history_data: {} | null | undefined = []
   const [enterNumIncome, setEnterIncome] = useState(0)
   const [enterNumExpense, setEnterExpense] = useState(0)
 
@@ -23,6 +39,8 @@ export const Index: React.FC = () => {
     e.preventDefault()
     setEnterIncome(enterNumIncome + Number(incomeSum))
     setEnterCharIncome(reasonIncome)
+    // 分からん
+    // history_data.push(setEnterIncome(enterNumIncome + Number(incomeSum)))
   }
 
   const onClickExpense = (e: { preventDefault: () => void }): void => {
@@ -50,6 +68,7 @@ export const Index: React.FC = () => {
           <span>
             : <span>{enterNumIncome}</span>円入金されました
           </span>
+          {/* <p>{history_data}</p> */}
         </div>
 
         <TextField
@@ -64,9 +83,17 @@ export const Index: React.FC = () => {
           onChange={(e) => setIncomeSum(Number(e.target.value))}
           type="number"
         />
-        <button css={btn} onClick={onClickNumIncome}>
-          ADD
-        </button>
+        <div>
+          <Button
+            className={classes.button}
+            color="default"
+            onClick={onClickNumIncome}
+            startIcon={<CloudUploadIcon />}
+            variant="contained"
+          >
+            Upload
+          </Button>
+        </div>
       </form>
 
       {/* 出費 */}
@@ -92,9 +119,15 @@ export const Index: React.FC = () => {
           onChange={(e) => setExpenseSum(Number(e.target.value))}
           type="number"
         />
-        <button css={btn} onClick={onClickExpense}>
-          ADD
-        </button>
+        <Button
+          className={classes.button}
+          color="default"
+          onClick={onClickExpense}
+          startIcon={<CloudUploadIcon />}
+          variant="contained"
+        >
+          Upload
+        </Button>
       </form>
     </div>
   )
