@@ -2,12 +2,8 @@
 import { css, jsx } from "@emotion/core"
 import { TextField } from "@material-ui/core"
 import Button from "@material-ui/core/Button"
-import Icon from "@material-ui/core/Icon"
 import { makeStyles } from "@material-ui/core/styles"
 import CloudUploadIcon from "@material-ui/icons/CloudUpload"
-import DeleteIcon from "@material-ui/icons/Delete"
-import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice"
-import SaveIcon from "@material-ui/icons/Save"
 import React, { useState } from "react"
 
 const useStyles = makeStyles((theme) => ({
@@ -83,17 +79,16 @@ export const Index: React.FC = () => {
           onChange={(e) => setIncomeSum(Number(e.target.value))}
           type="number"
         />
-        <div>
-          <Button
-            className={classes.button}
-            color="default"
-            onClick={onClickNumIncome}
-            startIcon={<CloudUploadIcon />}
-            variant="contained"
-          >
-            Upload
-          </Button>
-        </div>
+
+        <Button
+          className={classes.button}
+          color="default"
+          onClick={onClickNumIncome}
+          startIcon={<CloudUploadIcon />}
+          variant="contained"
+        >
+          Upload
+        </Button>
       </form>
 
       {/* 出費 */}
@@ -152,10 +147,4 @@ const subTitle = css`
 const text = css`
   letter-spacing: 0.8px;
   line-height: 48px;
-`
-
-const btn = css`
-  color: #fff;
-  background-color: chartreuse;
-  margin: 8px;
 `
