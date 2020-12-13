@@ -23,6 +23,7 @@
     "@types/node": "12.12.51",
     "@types/react": "16.9.43",
     "@types/react-dom": "16.9.8",
+    "@types/uuid": "8.3.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-standard": "14.1.1",
     "eslint-plugin-jest": "23.18.0",
