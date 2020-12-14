@@ -13,9 +13,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export const Index: React.FC = () => {
+  // history_dataに入金履歴などを入れて出力したい
+  const [historyData, setHistoryData]: any[] = useState([])
+
   const classes = useStyles()
-  // 分からん
-  // const history_data: {} | null | undefined = []
   const [enterNumIncome, setEnterIncome] = useState(0)
   const [enterNumExpense, setEnterExpense] = useState(0)
 
@@ -35,8 +36,10 @@ export const Index: React.FC = () => {
     e.preventDefault()
     setEnterIncome(enterNumIncome + Number(incomeSum))
     setEnterCharIncome(reasonIncome)
-    // 分からん
-    // history_data.push(setEnterIncome(enterNumIncome + Number(incomeSum)))
+    // 修正点
+    const next = [...historyData]
+    next.push(reasonIncome)
+    setHistoryData(next)
   }
 
   const onClickExpense = (e: { preventDefault: () => void }): void => {
@@ -64,8 +67,10 @@ export const Index: React.FC = () => {
           <span>
             : <span>{enterNumIncome}</span>円入金されました
           </span>
-          {/* <p>{history_data}</p> */}
+          {/* upload履歴 */}
+          <div>{historyData}</div>
         </div>
+        {/* upload履歴 */}
 
         <TextField
           id="standard-basic"
