@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
 
 export const Index: React.FC = () => {
   // history_dataに入金履歴などを入れて出力したい
-  const [historyData, setHistoryData]: any[] = useState([])
 
   const classes = useStyles()
   const [enterNumIncome, setEnterIncome] = useState(0)
@@ -28,18 +27,29 @@ export const Index: React.FC = () => {
 
   const [reasonIncome, setReasonIncome] = useState("")
   const [reasonExpense, setReasonExpense] = useState("")
+  const [reasonIncomeHistoryData, setReasonIncomeHistoryData]: any[] = useState(
+    []
+  )
+  const [numIncomeHistoryData, setNumIncomeHistoryData]: any[] = useState([])
 
   const onClickNumIncome = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
     // 収入の計算＆理由
     e.preventDefault()
-    setEnterIncome(enterNumIncome + Number(incomeSum))
+    // NULL の場合無視
+    if (Number(incomeSum) === 0) return
+
+    const numIncome = enterNumIncome + Number(incomeSum)
+    setEnterIncome(numIncome)
     setEnterCharIncome(reasonIncome)
-    // 修正点
-    const next = [...historyData]
-    next.push(reasonIncome)
-    setHistoryData(next)
+    // 収入履歴
+    const nextReason = [...reasonIncomeHistoryData]
+    nextReason.push(reasonIncome)
+    setReasonIncomeHistoryData(nextReason)
+    const nextNum = [...numIncomeHistoryData]
+    nextNum.push(Number(incomeSum))
+    setNumIncomeHistoryData(nextNum)
   }
 
   const onClickExpense = (e: { preventDefault: () => void }): void => {
@@ -68,7 +78,9 @@ export const Index: React.FC = () => {
             : <span>{enterNumIncome}</span>円入金されました
           </span>
           {/* upload履歴 */}
-          <div>{historyData}</div>
+          <div>
+            {reasonIncomeHistoryData} : {numIncomeHistoryData}
+          </div>
         </div>
         {/* upload履歴 */}
 
